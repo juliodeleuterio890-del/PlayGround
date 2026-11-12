@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101513">
+  <title>Fumō — Uma vitória estéril</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="game" aria-label="Jogo Fumō, combate direcional top-down"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="hud">
+      <div class="brand"><span class="brand-mark">不</span><div><strong>FUMŌ</strong><small>UMA VITÓRIA ESTÉRIL</small></div></div>
+      <div class="objective"><span class="eyebrow">OBJETIVO</span><strong id="objective">Atravesse o bambuzal</strong></div>
+      <div class="hud-right"><span id="stage-label">01 / 03</span><button id="sound-toggle" class="icon-button" title="Alternar áudio" aria-label="Alternar áudio">♫</button><button id="pause-button" class="icon-button" title="Pausar">Ⅱ</button></div>
+    </header>
+    <div class="bottom-hud"><div class="status"><i></i><span id="status-text">PRONTO</span></div><div class="hint" id="hint">WASD mover <b>·</b> Mouse mirar <b>·</b> Clique atacar <b>·</b> Espaço defender <b>·</b> Shift esquivar</div><div class="kill-count" id="kill-count">0 / 8</div></div>
+    <div class="toast" id="toast"></div>
+    <section class="overlay" id="intro">
+      <div class="intro-card">
+        <p class="eyebrow">UM VERTICAL SLICE DE <span>FUMŌ</span></p>
+        <h1>A ordem era<br><em>limpar a vila.</em></h1>
+        <p class="lead">Você é um soldado do Império. A missão parece simples. A lembrança, não.</p>
+        <div class="briefing"><span>MISSÃO 01</span><p>Avance pela aldeia. Leia a direção dos ataques. Um golpe basta — para todos.</p></div>
+        <button id="start-button" class="primary-button">INICIAR MISSÃO <span>→</span></button>
+        <div class="control-row"><span><b>WASD</b> mover</span><span><b>MOUSE</b> mirar</span><span><b>CLIQUE</b> atacar</span><span><b>ESPAÇO</b> guarda</span><span><b>SHIFT</b> esquiva</span></div>
+      </div>
+    </section>
+    <section class="overlay hidden" id="ending">
+      <div class="intro-card ending-card">
+        <p class="eyebrow">FIM DA OPERAÇÃO</p><h1 id="ending-title">A aldeia está<br><em>em silêncio.</em></h1>
+        <p class="lead" id="ending-copy">A ordem foi cumprida. Não havia nada para conquistar.</p>
+        <div class="briefing"><span>RELATÓRIO</span><p id="ending-stats">Nenhuma vitória devolve o que foi perdido.</p></div>
+        <button id="restart-button" class="primary-button">JOGAR NOVAMENTE <span>↻</span></button>
+      </div>
+    </section>
+    <section class="overlay hidden" id="pause-overlay"><div class="intro-card pause-card"><p class="eyebrow">MISSÃO SUSPENSA</p><h1>Respire.</h1><p class="lead">A aldeia continua aqui quando você voltar.</p><button id="resume-button" class="primary-button">RETOMAR <span>→</span></button></div></section>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
